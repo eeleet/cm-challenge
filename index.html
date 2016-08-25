@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cmTextEditor">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CM Text Editor</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-drag-and-drop-lists/1.4.0/angular-drag-and-drop-lists.min.js"></script>
+</head>
+<body ng-controller="cmTextEditorController" class="cm-text-editor">
+<div class="flex-container">
+    <ul dnd-list="model.data"
+        dnd-drop="drop(model.data, item, index)"
+        class="flex-item">
+        <li ng-repeat="item in model.data track by $index"
+            dnd-draggable="item"
+            dnd-dragstart="dragStart($index)"
+            dnd-effect-allowed="move">
+            <div class="flex-container cm-text-editor-item">
+                <div contenteditable="true" 
+                     ng-model="model.data[$index]"
+                     strip-br="true"></div>
+                <div ng-click="addElement($index)">+</div>
+                <div ng-click="removeElement($index)">-</div>
+            </div>
+        </li>
+    </ul>
+    <div class="flex-item">
+        <pre class="cm-json">{{json }}</pre>
+    </div>
+</div>
+
+<script src="scripts.js"></script>
+
+</body>
+</html>

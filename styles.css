@@ -1,0 +1,89 @@
+.cm-text-editor {
+    background: #ddd;
+    padding: 1em;
+    font-family: "Courier New";
+    font-size: small;
+}
+
+.cm-text-editor ul[dnd-list],
+.cm-text-editor ul[dnd-list] > li {
+    position: relative;
+    display: block;
+    padding: 0;
+    margin-bottom: 6px;
+}
+
+.cm-text-editor ul[dnd-list] {
+    min-height: 2em;
+    margin: 0;
+    padding: 0;
+}
+
+.cm-text-editor ul[dnd-list] .dndDraggingSource {
+    display: none;
+}
+
+.cm-text-editor ul[dnd-list] .dndPlaceholder {
+    display: block;
+    min-height: 2em;
+}
+
+.cm-text-editor-item {
+    width: 100%;
+}
+.cm-text-editor-item > div:nth-child(1){
+    padding: 1em;
+    width:100%;
+	min-height: 1em;
+    background: #eee;
+    overflow-x: auto;
+}
+.cm-text-editor-item > div:nth-child(1):focus{
+   outline: none;
+}
+.cm-text-editor-item > div:nth-child(2),
+.cm-text-editor-item > div:nth-child(3) {
+    color: #fff;
+    padding: 1em;
+	display: flex;
+	text-align: center;
+    align-self: stretch;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.cm-text-editor-item > div:nth-child(2) {
+    background: #a6c541;
+}
+.cm-text-editor-item > div:nth-child(3) {
+    background: #c15c44;
+}
+
+.cm-json {
+    background: #000;
+    color: #fff;
+    margin: 0 0 0 1em;
+    padding: 1em;
+    font-family: "Courier New";
+    font-size: small;
+    overflow-x: auto;
+}
+
+.flex-container {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: flex-start;
+}
+
+.flex-item {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: stretch;
+    width: 50%;
+}
